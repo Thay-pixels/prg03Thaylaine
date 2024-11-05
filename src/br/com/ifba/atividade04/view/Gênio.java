@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.com.ifba.atividade03.view;
+package br.com.ifba.atividade04.view;
 
 /**
  *
@@ -26,21 +26,93 @@ public class Gênio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblFraseGenio1 = new javax.swing.JLabel();
+        lblFraseGenio2 = new javax.swing.JLabel();
+        lblInfo = new javax.swing.JLabel();
+        spinnerValor = new javax.swing.JSpinner();
+        btnPalpite = new javax.swing.JButton();
+        lblRespostaGenio = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblFraseGenio1.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        lblFraseGenio1.setText("Vou pensar em um número");
+
+        lblFraseGenio2.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        lblFraseGenio2.setText("entre 1 e 5. Tente adivinhar!");
+
+        lblInfo.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
+        lblInfo.setText("ESCOLHA O VALOR:");
+
+        spinnerValor.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
+        spinnerValor.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+
+        btnPalpite.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
+        btnPalpite.setForeground(new java.awt.Color(153, 0, 0));
+        btnPalpite.setText("PALPITE");
+        btnPalpite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPalpiteActionPerformed(evt);
+            }
+        });
+
+        lblRespostaGenio.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(216, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblFraseGenio1)
+                    .addComponent(lblFraseGenio2))
+                .addGap(137, 137, 137))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblInfo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(spinnerValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(btnPalpite))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(lblRespostaGenio, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(lblFraseGenio1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblFraseGenio2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblInfo)
+                    .addComponent(spinnerValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnPalpite, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblRespostaGenio, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    //Método para verificar se palpite do usuário é o mesmo do gênio.
+    private void btnPalpiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPalpiteActionPerformed
+        // TODO add your handling code here:
+        
+        int palpiteGenio = (int) (Math.random() * 5) + 1;
+        int palpiteUser = Integer.parseInt(spinnerValor.getValue().toString());
+        
+       lblRespostaGenio.setText(palpiteGenio == palpiteUser ? "VOCÊ ACERTOU!" : "VOCÊ ERROU! Eu pensei no número " + palpiteGenio);  
+    }//GEN-LAST:event_btnPalpiteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +150,11 @@ public class Gênio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnPalpite;
+    private javax.swing.JLabel lblFraseGenio1;
+    private javax.swing.JLabel lblFraseGenio2;
+    private javax.swing.JLabel lblInfo;
+    private javax.swing.JLabel lblRespostaGenio;
+    private javax.swing.JSpinner spinnerValor;
     // End of variables declaration//GEN-END:variables
 }

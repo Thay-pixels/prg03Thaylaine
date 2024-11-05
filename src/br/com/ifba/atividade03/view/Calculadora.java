@@ -56,7 +56,7 @@ public class Calculadora extends javax.swing.JFrame {
         lblInfo02.setFont(new java.awt.Font("Gadugi", 1, 16)); // NOI18N
         lblInfo02.setText("SUA IDADE É: ");
 
-        lblInfoResultado.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
+        lblInfoResultado.setFont(new java.awt.Font("Gadugi", 1, 16)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

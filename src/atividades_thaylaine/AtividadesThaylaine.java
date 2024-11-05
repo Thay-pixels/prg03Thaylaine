@@ -8,7 +8,7 @@ package atividades_thaylaine;
  *
  * @author sunhe
  */
-public class Atividades_Thaylaine {
+public class AtividadesThaylaine {
 
     /**
      * @param args the command line arguments

@@ -26,21 +26,64 @@ public class RepetiçãoComSlider extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        lblMsgInicio = new javax.swing.JLabel();
+        sliderInicio = new javax.swing.JSlider();
+        lblMsgFim = new javax.swing.JLabel();
+        sliderFim = new javax.swing.JSlider();
+        lblMsgPasso = new javax.swing.JLabel();
+        sliderPasso = new javax.swing.JSlider();
+        btnContar = new javax.swing.JButton();
+        txtResultado = new javax.swing.JTextField();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblMsgInicio.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
+        lblMsgInicio.setText("INíCIO");
+        getContentPane().add(lblMsgInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 39, 43, -1));
+
+        sliderInicio.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        sliderInicio.setMaximum(10);
+        getContentPane().add(sliderInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 40, 140, -1));
+
+        lblMsgFim.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
+        lblMsgFim.setText("FIM");
+        getContentPane().add(lblMsgFim, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 66, 45, -1));
+
+        sliderFim.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        sliderFim.setMaximum(20);
+        sliderFim.setMinimum(1);
+        getContentPane().add(sliderFim, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 66, 140, -1));
+
+        lblMsgPasso.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
+        lblMsgPasso.setText("PASSO");
+        getContentPane().add(lblMsgPasso, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 93, 45, -1));
+
+        sliderPasso.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        sliderPasso.setMaximum(5);
+        sliderPasso.setMinimum(1);
+        getContentPane().add(sliderPasso, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 93, 140, -1));
+
+        btnContar.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
+        btnContar.setForeground(new java.awt.Color(255, 0, 51));
+        btnContar.setText("CONTAR");
+        btnContar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnContar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
+
+        txtResultado.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
+        getContentPane().add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 130, 220));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnContarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnContarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +121,13 @@ public class RepetiçãoComSlider extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnContar;
+    private javax.swing.JLabel lblMsgFim;
+    private javax.swing.JLabel lblMsgInicio;
+    private javax.swing.JLabel lblMsgPasso;
+    private javax.swing.JSlider sliderFim;
+    private javax.swing.JSlider sliderInicio;
+    private javax.swing.JSlider sliderPasso;
+    private javax.swing.JTextField txtResultado;
     // End of variables declaration//GEN-END:variables
 }

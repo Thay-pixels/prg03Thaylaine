@@ -8,6 +8,7 @@ package br.com.ifba.atividade05.view;
  *
  * @author sunhe
  */
+import javax.swing.DefaultListModel;
 public class RepetiçãoComSlider extends javax.swing.JFrame {
 
     /**
@@ -33,7 +34,11 @@ public class RepetiçãoComSlider extends javax.swing.JFrame {
         lblMsgPasso = new javax.swing.JLabel();
         sliderPasso = new javax.swing.JSlider();
         btnContar = new javax.swing.JButton();
-        txtResultado = new javax.swing.JTextField();
+        lblNumInicio = new javax.swing.JLabel();
+        lblNumFim = new javax.swing.JLabel();
+        lblNumPasso = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaNumeros = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -44,6 +49,12 @@ public class RepetiçãoComSlider extends javax.swing.JFrame {
 
         sliderInicio.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
         sliderInicio.setMaximum(10);
+        sliderInicio.setValue(0);
+        sliderInicio.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sliderInicioStateChanged(evt);
+            }
+        });
         getContentPane().add(sliderInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 40, 140, -1));
 
         lblMsgFim.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
@@ -53,6 +64,13 @@ public class RepetiçãoComSlider extends javax.swing.JFrame {
         sliderFim.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
         sliderFim.setMaximum(20);
         sliderFim.setMinimum(1);
+        sliderFim.setToolTipText("");
+        sliderFim.setValue(1);
+        sliderFim.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sliderFimStateChanged(evt);
+            }
+        });
         getContentPane().add(sliderFim, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 66, 140, -1));
 
         lblMsgPasso.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
@@ -62,6 +80,12 @@ public class RepetiçãoComSlider extends javax.swing.JFrame {
         sliderPasso.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
         sliderPasso.setMaximum(5);
         sliderPasso.setMinimum(1);
+        sliderPasso.setValue(1);
+        sliderPasso.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sliderPassoStateChanged(evt);
+            }
+        });
         getContentPane().add(sliderPasso, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 93, 140, -1));
 
         btnContar.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
@@ -74,16 +98,63 @@ public class RepetiçãoComSlider extends javax.swing.JFrame {
         });
         getContentPane().add(btnContar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
 
-        txtResultado.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
-        getContentPane().add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 130, 220));
+        lblNumInicio.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
+        lblNumInicio.setText("0");
+        getContentPane().add(lblNumInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 20, -1));
+
+        lblNumFim.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
+        lblNumFim.setText("1");
+        getContentPane().add(lblNumFim, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 20, -1));
+
+        lblNumPasso.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
+        lblNumPasso.setText("1");
+        getContentPane().add(lblNumPasso, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 20, -1));
+
+        listaNumeros.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
+        listaNumeros.setForeground(new java.awt.Color(153, 153, 255));
+        jScrollPane1.setViewportView(listaNumeros);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 120, 240));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Método para contar os valores
     private void btnContarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContarActionPerformed
         // TODO add your handling code here:
+        int valInicio = sliderInicio.getValue();
+        int valFim = sliderFim.getValue();
+        int valPasso = sliderPasso.getValue();
         
+        DefaultListModel lista = new DefaultListModel(); 
+        
+        for(int a = valInicio; a <= valFim; a += valPasso){
+            lista.addElement(a);
+        }
+        
+        listaNumeros.setModel(lista);
     }//GEN-LAST:event_btnContarActionPerformed
+
+    //Método para mostrar o valor do slider inicio sendo alterado.
+    private void sliderInicioStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderInicioStateChanged
+        // TODO add your handling code here:
+        int valor = sliderInicio.getValue();//Pegando o valor do slider
+        lblNumInicio.setText(Integer.toString(valor));//Mostrando o valor no label
+    }//GEN-LAST:event_sliderInicioStateChanged
+
+    //Método para mostrar o valor do slider fim sendo alterado.
+    private void sliderFimStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderFimStateChanged
+        // TODO add your handling code here:
+        int valor = sliderFim.getValue();//Pegando o valor do slider
+        lblNumFim.setText(Integer.toString(valor));//Mostrando o valor no label
+    }//GEN-LAST:event_sliderFimStateChanged
+
+    //Método para mostrar o valor do slider passo sendo alterado.
+    private void sliderPassoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderPassoStateChanged
+        // TODO add your handling code here:
+        int valor = sliderPasso.getValue();//Pegando o valor do slider
+        lblNumPasso.setText(Integer.toString(valor));//Mostrando o valor no label
+    }//GEN-LAST:event_sliderPassoStateChanged
 
     /**
      * @param args the command line arguments
@@ -122,12 +193,16 @@ public class RepetiçãoComSlider extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnContar;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblMsgFim;
     private javax.swing.JLabel lblMsgInicio;
     private javax.swing.JLabel lblMsgPasso;
+    private javax.swing.JLabel lblNumFim;
+    private javax.swing.JLabel lblNumInicio;
+    private javax.swing.JLabel lblNumPasso;
+    private javax.swing.JList<String> listaNumeros;
     private javax.swing.JSlider sliderFim;
     private javax.swing.JSlider sliderInicio;
     private javax.swing.JSlider sliderPasso;
-    private javax.swing.JTextField txtResultado;
     // End of variables declaration//GEN-END:variables
 }

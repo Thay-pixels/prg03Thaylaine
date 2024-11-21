@@ -51,7 +51,7 @@ public class Livro implements Publicacao{
             System.out.println("Folheando livro...");
             System.out.println("Pagina número " + this.getPaginaAtual());
         }else{
-             System.out.println("Não foi possivel folhear este livro.");
+            System.out.println("Não foi possivel folhear este livro.");
          }
         System.out.println();
     }
@@ -111,27 +111,27 @@ public class Livro implements Publicacao{
         return leitor.getNome();
     }
 
-    public void setTitulo(String titulo) {
+    private void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
-    public void setAutor(String autor) {
+    private void setAutor(String autor) {
         this.autor = autor;
     }
 
-    public void setTotalPaginas(int totalPaginas) {
+    private void setTotalPaginas(int totalPaginas) {
         this.totalPaginas = totalPaginas;
     }
 
-    public void setPaginaAtual(int paginaAtual) {
+    private void setPaginaAtual(int paginaAtual) {
         this.paginaAtual = paginaAtual;
     }
 
-    public void setAberto(boolean aberto) {
+    private void setAberto(boolean aberto) {
         this.aberto = aberto;
     }
 
-    public void setLeitor(Pessoa leitor) {
+    private void setLeitor(Pessoa leitor) {
         this.leitor = leitor;
     }
     

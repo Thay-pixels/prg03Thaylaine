@@ -10,10 +10,10 @@ package br.com.ifba.atividade10.relacionamentoClasses;
  */
 public interface Publicacao {
     
-    void abrir();
-    void fechar();
-    void folhear(int pag);
-    void avancarPagina();
-    void voltarPagina();
+    public void abrir();
+    public void fechar();
+    public void folhear(int pag);
+    public void avancarPagina();
+    public void voltarPagina();
     
 }

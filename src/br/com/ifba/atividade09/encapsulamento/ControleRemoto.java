@@ -158,7 +158,7 @@ public class ControleRemoto implements Controlador{
         this.tocando = tocando;
     }
     
-    //Classe principal para testar os métodos da classe Controlador.
+    //Método principal para testar os métodos da classe Controlador.
     public static void main(String[] args) {
         // TODO code application logic here
         ControleRemoto controle = new ControleRemoto();//Criando um objeto do tipo ControleRemoto para testar os métodos.

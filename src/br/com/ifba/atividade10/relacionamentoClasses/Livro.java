@@ -82,7 +82,7 @@ public class Livro implements Publicacao{
         System.out.println("TÍTULO: " + this.getTitulo());
         System.out.println("AUTOR: " + this.getAutor());
         System.out.println("TOTAL PAGS: " + this.getTotalPaginas());
-        System.out.println("LEITOR ATUAL: " + this.getLeitor());
+        System.out.println("LEITOR ATUAL: " + this.getLeitorName());
         System.out.println("STATUS ABERTO: " + this.isAberto());
         System.out.println();
     }
@@ -107,7 +107,7 @@ public class Livro implements Publicacao{
         return aberto;
     }
 
-    public String getLeitor() {
+    public String getLeitorName() {
         return leitor.getNome();
     }
 
